@@ -22,10 +22,10 @@ func InitRouter() chi.Router {
 	})
 
 	// testing custom handler
-	handler := handler.CustomHandler{}
+	customHandler := handler.CustomHandler{}
 
 	r.Route("/api/v1", func(r chi.Router) {
-		r.Mount("/handle", handler.InitRoutes())
+		r.Mount("/handle", customHandler.InitRoutes())
 	})
 
 	return r
